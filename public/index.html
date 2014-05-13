@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>JavaScript Library</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<!-- Vendor Stylesheets -->
+		<link rel="stylesheet" href="styles/normalize.css">
+		<link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="bower_components/codemirror/theme/solarized.css">
+
+		<!-- jsLib Stylesheets -->
+		<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:400,700'>
+		<link rel="stylesheet" href="styles/main.css">
+		
+		<!-- Angular Dependencies -->
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+
+	</head>
+
+	<body ng-app="jsLib">
+
+		<div class="app-wrapper" ng-view=""></div>
+
+		<!-- Angular Modules -->
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+
+		<!-- Application -->
+		<script src="scripts/app.js"></script>
+
+		<!-- Controllers -->
+		<script src="scripts/controllers/main.js"></script>
+		<script src="scripts/controllers/admin.js"></script>
+		<script src="scripts/controllers/snippet-edit.js"></script>
+		<script src="scripts/controllers/snippet-new.js"></script>
+
+		<!-- Misc Dependencies -->
+		<script src="bower_components/codemirror/lib/codemirror.js"></script>
+		<script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+		<script src="bower_components/codemirror/addon/edit/matchbrackets.js"></script>
+		<script src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+
+	</body>
+</html>

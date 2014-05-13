@@ -1,0 +1,45 @@
+<header class="app-header">
+
+	<a href="#/admin" class="js-logo">JavaScript Snippets</a>
+
+	<div class="app-header__controls">
+	<button class="save-button" ng-click="saveSnippet()">Save</button>
+	<button class="cancel-button" ng-click="cancelSnippet()">Cancel</button>
+</div>
+
+</header>
+
+<div class="main-wrapper">
+
+	<h1>New JavaScript Snippet</h1>
+
+	<form class="snippet--new">
+
+		<div class="form-group">
+			<label for="snippet-title">Title</label>
+			<input name="snippet-title" id="snippet-title" type="text" ng-model="snippet.title" placeholder="Give your snippet a title" autofocus>
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-description">Description</label>
+			<textarea name="snippet-description" id="snippet-description" ng-model="snippet.description" placeholder="Anything we need to know with the snippet? Add it in here (optional)"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-snippet">JavaScript Snippet</label>
+			<div name="snippet-snippet" id="snippet-snippet" ng-model="snippet.snippet" ui-codemirror="editorOptions"></div>
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-tags">Tags</label>
+			<input name="snippet-tags" id="snippet-tags" type="text" ng-model="snippet.tags" placeholder="Tag your snippet (optional)" ng-list>
+		</div>
+		
+		<div class="app-controls">
+			<button class="save-button" ng-click="saveSnippet()">Save</button>
+			<button class="cancel-button" ng-click="cancelSnippet()">Cancel</button>
+		</div>
+
+	</form>
+
+</div>

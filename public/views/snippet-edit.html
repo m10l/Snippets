@@ -1,0 +1,47 @@
+<header class="app-header">
+
+	<a href="#/admin" class="js-logo">JavaScript Snippets</a>
+
+	<div class="app-header__controls">
+		<button class="save-button" ng-click="updateSnippet()">Save</button>
+		<button class="cancel-button" ng-click="cancelSnippet()">Cancel</button>
+		<button class="delete-button" ng-click="deleteSnippet()">Delete</button>
+	</div>
+
+</header>
+
+<div class="main-wrapper">
+
+	<h1>Edit JavaScript Snippet</h1>
+
+	<form class="snippet--edit">
+
+		<div class="form-group">
+			<label for="snippet-title">Title</label>
+			<input name="snippet-title" id="snippet-title" type="text" ng-model="snippet.title" placeholder="Give your snippet a title" ng-show="dataLoaded">
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-description">Description</label>
+			<textarea name="snippet-description" id="snippet-description" ng-model="snippet.description" rows="5" placeholder="Anything we need to know with the snippet? Add it in here (optional)" ng-show="dataLoaded"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-snippet">JavaScript Snippet</label>
+			<div name="snippet-snippet" id="snippet-snippet" ng-model="snippet.snippet" ui-codemirror="editorOptions"></div>
+		</div>
+
+		<div class="form-group">
+			<label for="snippet-tags">Tags</label>
+			<input name="snippet-tags" id="snippet-tags" type="text" ng-model="snippet.tags" placeholder="Tag your snippet (optional)" ng-show="dataLoaded" ng-list>
+		</div>
+
+		<div class="app-controls">
+			<button class="save-button" ng-click="updateSnippet()">Save</button>
+			<button class="cancel-button" ng-click="cancelSnippet()">Cancel</button>
+			<button class="delete-button" ng-click="deleteSnippet()">Delete</button>
+		</div>
+		
+	</form>
+
+</div>

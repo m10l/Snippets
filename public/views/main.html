@@ -1,0 +1,45 @@
+<header class="app-header not-logged-in">
+
+	<span class="js-logo">JavaScript Snippets</span>
+
+	<div class="app-header__controls">
+		<form class="app-search" ng-cloak ng-show="snippets.length">
+			<div class="search-wrapper">
+				<label class="app-search__label" for="search">Filter</label>
+				<input class="app-search__field" type="text" id="search" ng-model="search" placeholder="Search Snippets">
+			</div>
+		</form>
+	</div>
+
+</header>
+
+<div class="main-wrapper">
+
+	<h1>JavaScript Snippets</h1>
+
+	<div class="snippets-empty-state" ng-cloak ng-show="!snippets.length && dataLoaded">
+		No Snippets Yet
+	</div>
+
+	<ol class="snippets-list" ng-cloak ng-show="snippets.length">
+		
+		<li ng-repeat="snippet in snippets | filter: search ">
+			<article class="snippet">
+				<h1 class="snippet__title">{{ snippet.title }}</h1>
+				<aside ng-if="(snippet.description).length" class="snippet__description">
+					{{ snippet.description }}
+				</aside>
+				<div class="snippet__snippet" ng-model="snippet.snippet" ui-codemirror="editorOptions" tabindex="-1" ></div>
+				<aside ng-if="(snippet.tags).length" class="snippet__tags">
+					<span ng-repeat="tag in snippet.tags">{{ tag }}</span>
+				</aside>
+			</article>
+		</li>
+
+		<li class="snippets-empty-state search-no-results" ng-hide="(snippets | filter: search ).length">
+			We can't find any snippets, maybe try a different search term?
+		</li>
+
+	</ol>
+
+</div>
